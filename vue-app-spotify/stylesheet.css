@@ -1,0 +1,49 @@
+[v-cloak] {
+	display: none;
+}
+
+body {
+	background-color: #ededed;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.album {
+	width:300px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 40px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.albumName {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+.thumbnail {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.searchBar {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #d8d8d8;
+	width: 600px;
+	height: 40px;
+	margin: 30px;
+	padding-left: 10px;
+	font-size: 20px;
+}

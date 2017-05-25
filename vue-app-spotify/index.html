@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Spotify app</title>
+		<link rel="stylesheet" href="stylesheet.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="index.js"></script>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<div class="container">
+				<input v-model="searchTerm" class="searchBar" placeholder="Search">
+			</div>
+			<div class="container">
+				<div v-for="album in filteredAlbums" class="album">
+					<img v-bind:src="album.images[1].url" class="thumbnail">
+      				<p class="albumName">{{ album.name }}</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
