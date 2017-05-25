@@ -29,7 +29,7 @@ router.get('/albums', function(req,res,next){
 		})
 		.catch(function(error){
 			//request() defaults to catch for non 200 status codes
-			console.log("Error");
+			console.log(error);
 			res.status(500).json(error);
 		});
 });
@@ -47,7 +47,11 @@ function searchArtist(artist){
 		})
 		.then(function(foundArtist){
 			// return first result
+			if (foundArtist.body.artists.total == 0){
+				throw "Error: can't find artist";
+			} else {
 			return foundArtist.body.artists.items[0];
+			}
 		})
 		.catch(function(error){
 			throw error;
