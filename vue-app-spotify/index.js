@@ -23,6 +23,8 @@ window.onload = function(){
 						return images[1].url;
 					}
 				},
+			},
+			computed: {
 				filteredAlbums: function(){
 					var searchTerm = this.searchTerm.toLowerCase();
 					return this.albums.filter(function (album) {
