@@ -12,7 +12,7 @@ window.onload = function(){
 		new Vue({
 			el: '#app',
 			data: {
-				filteredAlbums: albums,
+				albums: albums,
 				searchTerm: ""
 			},
 			methods: {
@@ -22,15 +22,18 @@ window.onload = function(){
 					} else {
 						return images[1].url;
 					}
+				},
+				filteredAlbums: function(){
+					var searchTerm = this.searchTerm.toLowerCase();
+					return this.albums.filter(function (album) {
+						var res = album.name.toLowerCase().search(searchTerm);
+						return res != -1;
+					})
 				}
 			},
 			watch: {
 				searchTerm: function(){
-					var searchTerm = this.searchTerm.toLowerCase();
-					this.filteredAlbums = albums.filter(function (album) {
-						var res = album.name.toLowerCase().search(searchTerm);
-						return res != -1;
-					})
+					this.filteredAlbums();
 				}
 			}
 		});

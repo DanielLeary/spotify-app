@@ -29,7 +29,7 @@ router.get('/albums', function(req,res,next){
 		})
 		.catch(function(error){
 			//request() defaults to catch for non 200 status codes
-			if(error.error) {
+			if(error.response) {
 				console.log(error.response.body);
 				res.status(error.statusCode).json(error.response.body);
 			} else {

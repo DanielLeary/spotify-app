@@ -16,7 +16,7 @@
 				<input v-model="searchTerm" class="searchBar" placeholder="Search">
 			</div>
 			<div class="container">
-				<div v-for="album in filteredAlbums" class="album">
+				<div v-for="album in filteredAlbums()" class="album">
 					<img v-bind:src="artwork(album.images)" class="thumbnail">
       				<p class="albumName">{{ album.name }}</p>
 				</div>
