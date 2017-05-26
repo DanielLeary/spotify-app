@@ -17,7 +17,7 @@
 			</div>
 			<div class="container">
 				<div v-for="album in filteredAlbums" class="album">
-					<img v-bind:src="album.images[1].url" class="thumbnail">
+					<img v-bind:src="artwork(album.images)" class="thumbnail">
       				<p class="albumName">{{ album.name }}</p>
 				</div>
 			</div>
