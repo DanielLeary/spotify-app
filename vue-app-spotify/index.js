@@ -5,7 +5,6 @@ window.onload = function(){
 		function(data){
 			albums = data;
 			console.log(albums);
-			console.log("in here\n");
 		}
 	).fail(function(){
 		console.log("Ajax API call failed");
@@ -18,7 +17,6 @@ window.onload = function(){
 			},
 			methods: {
 				artwork: function(images){
-					console.log(images);
 					if(images.length===0){
 						return "noart.png";
 					} else {
