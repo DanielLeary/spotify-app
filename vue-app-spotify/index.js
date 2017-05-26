@@ -33,11 +33,6 @@ window.onload = function(){
 					})
 				}
 			},
-			watch: {
-				searchTerm: function(){
-					this.filteredAlbums();
-				}
-			}
 		});
 	});
 
