@@ -29,9 +29,13 @@ router.get('/albums', function(req,res,next){
 		})
 		.catch(function(error){
 			//request() defaults to catch for non 200 status codes
-			if(error.error) console.log(error.error);
-			else console.log(error);
-			res.status(error.statusCode || 500).json(error);
+			if(error.error) {
+				console.log(error.response.body);
+				res.status(error.statusCode).json(error.response.body);
+			} else {
+				console.log(error);
+				res.status(500).json(error);
+			}
 		});
 });
 
