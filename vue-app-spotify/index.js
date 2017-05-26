@@ -6,8 +6,8 @@ window.onload = function(){
 			albums = data;
 			console.log(albums);
 		}
-	).fail(function(){
-		console.log("Ajax API call failed");
+	).fail(function(err){
+		console.log("Req failed: ", err.responseJSON);
 	}).done(function(){
 		new Vue({
 			el: '#app',
