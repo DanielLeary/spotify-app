@@ -25,16 +25,16 @@ router.get('/albums', function(req,res,next){
 			var dedupedAlbums = dedup(albums.body.items);
 			logAlbNames(dedupedAlbums);
 			//console.log(JSON.stringify(dedupedAlbums, null, 4));
-			res.json(dedupedAlbums);
+			res.jsonp(dedupedAlbums);
 		})
 		.catch(function(error){
 			//request() defaults to catch for non 200 status codes
 			if(error.response) {
 				console.log(error.response.body);
-				res.status(error.statusCode).json(error.response.body);
+				res.status(error.statusCode).jsonp(error.response.body);
 			} else {
 				console.log(error);
-				res.status(500).json(error);
+				res.status(500).jsonp(error);
 			}
 		});
 });
@@ -101,7 +101,7 @@ router.get('/search/artist', function(req,res,next){
 			res.json(artist);
 		})
 		.catch(function(error){
-			res.status(500).json(error.body)
+			res.status(500).jsonp(error.body)
 		});
 });
 */

@@ -1,7 +1,7 @@
 window.onload = function(){
 	var albums;
 
-	$.get("http://localhost:3000/api/albums?artist=iron+maiden",
+	$.getJSON("http://localhost:3000/api/albums?artist=iron+maiden&callback=?",
 		function(data){
 			albums = data;
 			console.log(albums);
